@@ -72,7 +72,7 @@ on:
 jobs:
   prepare:
     name: Prepare for Building
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mia1]
     steps:
     - name: Set Project variables
       id: proj-variables
