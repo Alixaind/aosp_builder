@@ -132,7 +132,7 @@ jobs:
   test:
     name: Test Local Manifests
     needs: prepare
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mia1]
     steps:
       # Accept Project Variables
     - name: Set Repo Project
@@ -203,7 +203,7 @@ jobs:
     name: Build using foss.crave.io
     needs: test 
       # Change this to self-hosted after setting up devspace as github actions runner
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mia1]
     concurrency:
       group: ${{ github.actor }}
     steps:
