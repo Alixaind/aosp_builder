@@ -71,7 +71,7 @@ on:
 
 jobs:
   Start-Runner:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mia1]
 
     steps:
     - name: Checkout code
@@ -111,7 +111,7 @@ jobs:
         fi "
   prepare:
     name: Prepare for Building
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, mia1]
     steps:
     - name: Set Project variables
       id: proj-variables
@@ -242,7 +242,7 @@ jobs:
     timeout-minutes: 720      
     name: Build using foss.crave.io
     needs: test 
-    runs-on: self-hosted
+    runs-on: [self-hosted, mia1]
     concurrency:
       group: ${{ github.actor }}
     steps:
